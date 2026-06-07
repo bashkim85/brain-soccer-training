@@ -381,6 +381,31 @@ h2 {
 
 /* ─── ABOUT ─── */
 .about { background: var(--dark2); }
+.coaches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 60px;
+}
+.coach-card {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.coach-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,255,135,0.3);
+}
+.coach-img-wrap { position: relative; }
+.coach-img-box { position: relative; border-radius: 16px; overflow: hidden; }
+.coach-text { display: flex; flex-direction: column; gap: 14px; }
+.coach-text h3 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--white); }
+.coach-role { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -724,6 +749,7 @@ h2 {
   .hero { grid-template-columns: 1fr; padding: 140px 32px 80px; max-width: 100%; }
   .hero-visual { display: none; }
   .about-grid { grid-template-columns: 1fr; }
+  .coaches-grid { grid-template-columns: 1fr; }
   .about-img-wrap { max-width: 400px; }
   .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
 }
