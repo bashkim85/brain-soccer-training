@@ -521,6 +521,7 @@ h2 {
   gap: 28px;
   align-items: stretch;
   grid-auto-rows: 1fr;
+  margin-top: 60px;
 }
   align-items: stretch;
 }
