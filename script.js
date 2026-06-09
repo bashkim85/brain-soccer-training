@@ -44,12 +44,32 @@ document.querySelectorAll('.pillar-card').forEach((el, i) => {
 });
 
 // Contact form
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
-  btn.innerHTML = '✓ Message sent — I\'ll be in touch soon!';
-  btn.style.background = 'linear-gradient(135deg, #00c853, #00b0cc)';
+  const form = e.target;
+  btn.innerHTML = 'Duke dërguar...';
   btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      btn.innerHTML = '✓ Mesazhi u dërgua — Do të kontaktoheni së shpejti!';
+      btn.style.background = 'linear-gradient(135deg, #00c853, #00b0cc)';
+      form.reset();
+    } else {
+      btn.innerHTML = '✗ Dicka shkoi gabim. Provo përsëri.';
+      btn.style.background = 'red';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.innerHTML = '✗ Dicka shkoi gabim. Provo përsëri.';
+    btn.style.background = 'red';
+    btn.disabled = false;
+  }
 });
 
 // Animate stat numbers on scroll
