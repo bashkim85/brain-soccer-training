@@ -43,7 +43,34 @@ document.querySelectorAll('.pillar-card').forEach((el, i) => {
   el.style.transitionDelay = `${i * 60}ms`;
 });
 
-// Contact form - handled by Formspree directly
+// Contact form
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const form = e.target;
+  btn.innerHTML = 'Duke dërguar...';
+  btn.disabled = true;
+  try {
+    const response = await fetch('https://formspree.io/f/xojzwzwl', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      btn.innerHTML = '✓ Mesazhi u dërgua — Do të kontaktoheni së shpejti!';
+      btn.style.background = 'linear-gradient(135deg, #00c853, #00b0cc)';
+      form.reset();
+    } else {
+      btn.innerHTML = '✗ Dicka shkoi gabim. Provo përsëri.';
+      btn.style.background = 'red';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.innerHTML = '✗ Dicka shkoi gabim. Provo përsëri.';
+    btn.style.background = 'red';
+    btn.disabled = false;
+  }
+});
 
 // Animate stat numbers on scroll
 const statEls = document.querySelectorAll('.hstat strong');
