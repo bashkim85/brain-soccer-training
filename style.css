@@ -515,6 +515,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+.plans-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
   align-items: stretch;
 }
 .plan-card {
@@ -528,6 +532,29 @@ h2 {
   transition: border-color 0.3s, transform 0.3s;
 }
 .plan-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.12); }
+
+/* Plan tier badges */
+.plan-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+.bronze-badge { background: rgba(205,127,50,0.15); color: #cd7f32; border: 1px solid rgba(205,127,50,0.3); }
+.silver-badge { background: rgba(192,192,192,0.15); color: #c0c0c0; border: 1px solid rgba(192,192,192,0.3); }
+.gold-badge   { background: rgba(255,215,0,0.15);   color: #ffd700; border: 1px solid rgba(255,215,0,0.3); }
+.premium-badge{ background: rgba(0,212,255,0.15);   color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+
+.plan-bronze:hover { border-color: rgba(205,127,50,0.4); }
+.plan-silver:hover { border-color: rgba(192,192,192,0.4); }
+.plan-gold:hover   { border-color: rgba(255,215,0,0.4); }
+.plan-premium:hover{ border-color: rgba(0,212,255,0.4); }
+
+.plan-price-wrap { margin: 12px 0 20px; }
+.plan-price span { font-size: 0.85rem; color: var(--muted); }
 .plan-card.plan-featured {
   background: var(--dark4);
   border-color: rgba(0,255,135,0.4);
@@ -789,6 +816,7 @@ h2 {
 @media (max-width: 860px) {
   .pillars-grid { grid-template-columns: repeat(2, 1fr); }
   .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .plans-grid-4 { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .proof-numbers { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
