@@ -518,6 +518,8 @@ h2 {
 }
 .plans-grid-4 {
   grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: stretch;
 }
   align-items: stretch;
 }
@@ -577,8 +579,18 @@ h2 {
 .gold-badge   { background: rgba(255,215,0,0.15);   color: #ffd700; border: 1px solid rgba(255,215,0,0.4); }
 .premium-badge{ background: rgba(0,212,255,0.15);   color: #00d4ff; border: 1px solid rgba(0,212,255,0.4); }
 
-.plan-price-wrap { margin: 12px 0 20px; }
-.plan-price span { font-size: 0.85rem; color: var(--muted); }
+.plan-price-wrap { margin: 8px 0 20px; }
+.plan-price-wrap .plan-price {
+  font-size: 0.95rem !important;
+  color: var(--muted) !important;
+  font-family: 'Inter', sans-serif !important;
+  margin-bottom: 0 !important;
+}
+.plan-price-wrap .plan-price span {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: var(--muted) !important;
+}
 .plan-card.plan-featured {
   background: var(--dark4);
   border-color: rgba(0,255,135,0.4);
@@ -648,7 +660,12 @@ h2 {
   flex-shrink: 0;
 }
 .plan-features li:last-child { border-bottom: none; }
-.plan-card .btn-primary, .plan-card .btn-outline { width: 100%; justify-content: center; }
+.plan-card .btn-primary, .plan-card .btn-outline {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+.plan-features { flex: 1; }
 
 /* ─── RESULTS ─── */
 .results { background: var(--dark); }
