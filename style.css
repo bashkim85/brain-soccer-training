@@ -678,30 +678,36 @@ h2 {
 }
 .plan-features { flex: 1; margin-bottom: 24px; }
 
-/* Plan card button */
-.btn-plan {
-  display: block;
-  width: 100%;
+/* Plan card button - all same */
+.btn-plan,
+.plan-card .btn-plan {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
   text-align: center;
   margin-top: auto;
-  padding: 14px 0;
-  border-radius: 12px;
-  background: rgba(0, 180, 255, 0.12);
-  border: 2px solid rgba(0, 180, 255, 0.6);
-  color: #00b4ff;
-  font-family: 'Syne', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
+  padding: 15px 0;
+  border-radius: 14px;
+  background: rgba(0, 180, 255, 0.1) !important;
+  border: 2px solid rgba(0, 180, 255, 0.6) !important;
+  color: #00c8ff !important;
+  font-family: 'Syne', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
   letter-spacing: 0.5px;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: none !important;
 }
-.btn-plan:hover {
-  background: rgba(0, 180, 255, 0.9);
-  color: #000;
-  border-color: rgba(0, 180, 255, 1);
-  box-shadow: 0 8px 30px rgba(0, 180, 255, 0.35);
+.btn-plan:hover,
+.plan-card .btn-plan:hover {
+  background: rgba(0, 180, 255, 0.85) !important;
+  color: #000 !important;
+  border-color: rgba(0, 180, 255, 1) !important;
+  box-shadow: 0 8px 30px rgba(0, 180, 255, 0.3) !important;
   transform: translateY(-2px);
+  opacity: 1 !important;
 }
 
 /* ─── RESULTS ─── */
