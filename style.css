@@ -520,6 +520,7 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   align-items: stretch;
+  grid-auto-rows: 1fr;
 }
   align-items: stretch;
 }
@@ -544,22 +545,23 @@ h2 {
   height: 3px;
   border-radius: 24px 24px 0 0;
 }
-.plan-bronze::before { background: linear-gradient(90deg, #cd7f32, #e8a857); }
-.plan-silver::before { background: linear-gradient(90deg, #a8a8a8, #d4d4d4); }
-.plan-gold::before   { background: linear-gradient(90deg, #f0a500, #ffd700); }
-.plan-premium::before{ background: linear-gradient(90deg, #00b4d8, #00d4ff); }
+.plan-bronze::before,
+.plan-silver::before,
+.plan-gold::before,
+.plan-premium::before { background: linear-gradient(90deg, #0090cc, #00d4ff); }
 
-/* Card borders per tier */
-.plan-bronze { border-color: rgba(205,127,50,0.35); background: linear-gradient(160deg, rgba(205,127,50,0.06), var(--dark3)); }
-.plan-silver { border-color: rgba(192,192,192,0.35); background: linear-gradient(160deg, rgba(192,192,192,0.06), var(--dark3)); }
-.plan-gold   { border-color: rgba(255,215,0,0.45);   background: linear-gradient(160deg, rgba(255,215,0,0.07), var(--dark3)); }
-.plan-premium{ border-color: rgba(0,212,255,0.45);   background: linear-gradient(160deg, rgba(0,212,255,0.07), var(--dark3)); }
+/* Card borders - all blue */
+.plan-bronze, .plan-silver, .plan-gold, .plan-premium {
+  border-color: rgba(0, 180, 255, 0.4);
+  background: linear-gradient(160deg, rgba(0, 180, 255, 0.05), var(--dark3));
+}
 
-/* Hover effects */
-.plan-bronze:hover { transform: translateY(-8px); border-color: rgba(205,127,50,0.7); box-shadow: 0 20px 60px rgba(205,127,50,0.15); }
-.plan-silver:hover { transform: translateY(-8px); border-color: rgba(192,192,192,0.7); box-shadow: 0 20px 60px rgba(192,192,192,0.15); }
-.plan-gold:hover   { transform: translateY(-8px); border-color: rgba(255,215,0,0.7);   box-shadow: 0 20px 60px rgba(255,215,0,0.18); }
-.plan-premium:hover{ transform: translateY(-8px); border-color: rgba(0,212,255,0.7);   box-shadow: 0 20px 60px rgba(0,212,255,0.18); }
+/* Hover effects - all blue glow */
+.plan-bronze:hover, .plan-silver:hover, .plan-gold:hover, .plan-premium:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 180, 255, 0.8);
+  box-shadow: 0 20px 60px rgba(0, 180, 255, 0.2);
+}
 
 /* Plan tier badges */
 .plan-badge {
