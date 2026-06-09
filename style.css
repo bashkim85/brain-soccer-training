@@ -552,15 +552,16 @@ h2 {
 
 /* Card borders - all blue */
 .plan-bronze, .plan-silver, .plan-gold, .plan-premium {
-  border-color: rgba(0, 180, 255, 0.4);
+  border: 2px solid rgba(0, 180, 255, 0.55);
   background: linear-gradient(160deg, rgba(0, 180, 255, 0.05), var(--dark3));
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08), inset 0 0 30px rgba(0, 180, 255, 0.03);
 }
 
 /* Hover effects - all blue glow */
 .plan-bronze:hover, .plan-silver:hover, .plan-gold:hover, .plan-premium:hover {
   transform: translateY(-8px);
-  border-color: rgba(0, 180, 255, 0.8);
-  box-shadow: 0 20px 60px rgba(0, 180, 255, 0.2);
+  border-color: rgba(0, 180, 255, 1);
+  box-shadow: 0 20px 60px rgba(0, 180, 255, 0.25), inset 0 0 40px rgba(0, 180, 255, 0.05);
 }
 
 /* Plan tier badges */
@@ -662,12 +663,18 @@ h2 {
   flex-shrink: 0;
 }
 .plan-features li:last-child { border-bottom: none; }
+.plan-contact-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 8px 0 20px;
+}
 .plan-card .btn-primary, .plan-card .btn-outline {
   width: 100%;
   justify-content: center;
   margin-top: auto;
+  padding-top: 14px;
 }
-.plan-features { flex: 1; }
+.plan-features { flex: 1; margin-bottom: 24px; }
 
 /* ─── RESULTS ─── */
 .results { background: var(--dark); }
