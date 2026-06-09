@@ -733,6 +733,39 @@ h2 {
 .footer-links a:hover { color: var(--white); }
 .footer-copy { color: #333; font-size: 0.78rem; }
 
+/* ─── SCROLL TO TOP ─── */
+#scrollTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,255,135,0.4);
+}
+#scrollTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#scrollTop:hover {
+  background: #00e676;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,255,135,0.5);
+}
+
 /* ─── ANIMATIONS ─── */
 .reveal {
   opacity: 0;
